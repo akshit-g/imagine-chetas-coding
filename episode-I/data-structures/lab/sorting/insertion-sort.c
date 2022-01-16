@@ -1,35 +1,35 @@
 #include <stdio.h>
 
-void print_array(int *, int);
-void insertion_sort(int *, int);
+void pa(int *, int);
+void ins(int *, int);
 void swap(int *, int *);
 
 int main() {
     int n;
-    int arr[25];
+    int a[25];
 
     printf("Enter number of elements: ");
     scanf("%d", &n);
 
-    printf("Enter elements of the unsorted array:\n");
+    printf("Enter elements of the unsorted aay:\n");
     for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", &a[i]);
     }
 
-    printf("Unsorted array:\n");
-    print_array(arr, n);
+    printf("Unsorted:\n");
+    pa(a, n);
 
-    insertion_sort(arr, n);
+    ins(a, n);
 
-    printf("\nSorted array by insertion sort:\n");
-    print_array(arr, n);
+    printf("\nSorted:\n");
+    pa(a, n);
 
     return 0;
 }
 
-void print_array(int *arr, int n) {
+void pa(int *a, int n) {
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", a[i]);
     }
 }
 
@@ -41,18 +41,18 @@ void swap(int *a, int *b) {
     *a = temp;
 }
 
-void insertion_sort(int *arr, int n) {
+void ins(int *a, int n) {
     int i, j, key;
 
     for (i = 1; i < n; i++) {
-        key = arr[i];
+        key = a[i];
         j = i - 1;
 
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
+        while (j >= 0 && a[j] > key) {
+            a[j + 1] = a[j];
             j--;
         }
 
-        arr[j + 1] = key;
+        a[j + 1] = key;
     }
 }
