@@ -129,6 +129,7 @@ void pop() {
         return;
     } else {
         printf("Popping top element!\n");
+        printf("%d", stack[top]);
         top--;
     }
 }
